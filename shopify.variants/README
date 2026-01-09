@@ -1,0 +1,37 @@
+# Variant Metafields Display on Website Description
+
+## Step 1: Background
+
+This project was built in a real production environment for a furniture
+e-commerce company.
+
+At the time, we had already launched **Google Ads Performance Max (PMax)**
+campaigns, which are known to be both **powerful and costly**. PMax explores
+multiple Google-owned placements to identify high-converting audiences, but
+this learning process often takes weeks or even months.
+
+During early campaign stages, traffic volume increased, but **conversion
+performance heavily depended on landing page quality**.
+
+From Google Analytics (GA4), we observed a critical issue:
+most users spent **less than 3 seconds** on the website before leaving.
+
+This made one thing clear:
+> **The landing page experience is the first and most important conversion
+lever once a user clicks an ad.**
+
+---
+
+## Problem Statement
+
+With limited budget and an active ad campaign already running, rebuilding the
+entire website or hiring a new agency was not feasible.
+
+However, we still needed to improve perceived quality and usability to match
+industry leaders such as **RH, CB2, Visual Comfort, and Pottery Barn**—without
+enterprise-level resources.
+
+The challenge became:
+- How to improve product detail pages quickly
+- How to present complex specifications clearly
+- How to do this **within Shopify’s constraints**
