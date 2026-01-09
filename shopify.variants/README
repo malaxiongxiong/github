@@ -1,37 +1,49 @@
-# Variant Metafields Display on Website Description
+Variant Metafields Display on Website Description
 
-## Step 1: Background
+Background and Behind Story Logistics: 
 
-This project was built in a real production environment for a furniture
-e-commerce company.
-
-At the time, we had already launched **Google Ads Performance Max (PMax)**
-campaigns, which are known to be both **powerful and costly**. PMax explores
-multiple Google-owned placements to identify high-converting audiences, but
-this learning process often takes weeks or even months.
-
-During early campaign stages, traffic volume increased, but **conversion
-performance heavily depended on landing page quality**.
-
-From Google Analytics (GA4), we observed a critical issue:
-most users spent **less than 3 seconds** on the website before leaving.
-
-This made one thing clear:
-> **The landing page experience is the first and most important conversion
-lever once a user clicks an ad.**
+This project was built in a real production environment for a furniture e-commerce company.
+At the time, we had already launched Google Ads Performance Max (PMax) campaigns, which are known to be both powerful and costly. PMax explores
+multiple Google-owned placements to identify high-converting audiences, but this learning process often takes weeks or even months.
+During early campaign stages, traffic volume increased, but conversion performance heavily depended on landing page quality.
+From Google Analytics (GA4), we observed a critical issue: most users spent less than 3 seconds on the website before leaving.
+This made one thing clear: The landing page experience is the first and most important conversion lever once a user clicks an ad.
 
 ---
 
 ## Problem Statement
 
-With limited budget and an active ad campaign already running, rebuilding the
-entire website or hiring a new agency was not feasible.
+With limited budget and an active ad campaign already running, rebuilding the entire website or hiring a new agency was not feasible.
 
-However, we still needed to improve perceived quality and usability to match
-industry leaders such as **RH, CB2, Visual Comfort, and Pottery Barn**—without
-enterprise-level resources.
+However, we still needed to improve perceived quality and usability to match industry leaders such as RH, CB2, Visual Comfort, and Pottery Barn — without enterprise-level resources.
 
 The challenge became:
-- How to improve product detail pages quickly
+- How to improve product detail landing pages quickly
 - How to present complex specifications clearly
-- How to do this **within Shopify’s constraints**
+- How to do this within Shopify’s constraints and limited Shopify Built-in features
+
+---
+
+## Step 1: Research and Feasibility Validation
+
+Before writing any code, the first question was whether this idea was technically feasible within Shopify’s constraints.
+
+To answer that, I started with a focused research phase:
+- Reviewing Shopify documentation (metafields, variants, Liquid)
+- Studying implementation patterns shared by developers
+- Watching walkthroughs and reproducing logic step by step
+
+The goal was not to copy code, but to understand the underlying data flow and determine whether a scalable solution was possible.
+
+Through this process, a clear implementation plan emerged:
+
+1. Define variant-level metafields for specification data
+2. Populate metafields across all product variants
+3. Connect metafields to variants via Liquid
+4. Render specification data on the product page
+5. Debug edge cases and rendering issues
+6. Refine UI details (button styles, typography, spacing)
+
+This step ensured that the solution was technically sound before moving into full implementation.
+
+
