@@ -46,4 +46,11 @@ Through this process, a clear implementation plan emerged:
 
 This step ensured that the solution was technically sound before moving into full implementation.
 
+## Shopify Variant Metafields Setup
+
+To support variant-level specifications, the first step was defining custom metafields directly in Shopify Admin.
+
+Instead of relying on product-level fields, metafields were created at the **variant scope**, allowing each option (e.g. size, finish) to carry its own specification data.
+
+![Build variant metafields in Shopify Admin](./images/build_metafields.png)
 
