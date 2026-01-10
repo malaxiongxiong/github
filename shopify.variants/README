@@ -57,3 +57,112 @@ These pages share a few common traits:
 - Minimal reliance on third-party UI plugins
 
 
+## Shopify Variant Metafields Setup
+To support variant-level specifications, the first step was definingcustom metafields directly in Shopify Admin.
+Instead of relying on product-level fields, metafields were created at the **variant scope**, allowing each option (e.g. size, finish) to carry its own specification data.
+![Build variant metafields in Shopify Admin](./images/build_metafields.png)
+
+
+## Editing Metafields Across Product Variants
+After defining the metafields, specification values were populated for each product variant individually.
+This step ensured that dimensions and technical details remain accurate when users switch between variants on the product page.
+![Edit metafields under different product variants](./images/edit_metafields_under_different_product_variants.png)
+
+At this stage, all specification data existed in Shopify, but it was not yet connected to the frontend.
+The next step was bridging variant metafields with Liquid rendering.
+
+## Step 2: Connecting Variant Metafields to the Frontend
+
+After all specification data was defined and populated at the variant level,
+the next step was rendering this data dynamically on the product page.
+
+At this stage, the challenge was no longer data availability, but **data flow**:
+how to correctly bridge Shopify variant metafields to the frontend and ensure
+the displayed specifications update when users switch variants.
+
+---
+
+### Implementation Overview
+
+The implementation follows a clear separation of responsibilities:
+
+- **Shopify Admin**  
+  Stores variant-level specification data using native metafields.
+
+- **Liquid (Server-side rendering)**  
+  Extracts metafield values for each variant and exposes them in a
+  JavaScript-readable structure.
+
+- **JavaScript (Client-side interaction)**  
+  Listens for variant changes and updates the displayed specifications
+  without requiring a page refresh.
+
+This approach avoids third-party Shopify apps and keeps all logic
+fully maintainable within the theme.
+
+---
+
+### Data Preparation with Liquid
+
+Liquid is used to iterate through all product variants and serialize
+their metafield values into structured objects.
+
+Two datasets are prepared:
+- Specifications in centimeters
+- Specifications in inches
+
+Each dataset is keyed by `variant.id`, allowing constant-time lookup
+when the active variant changes.
+
+This ensures that:
+- Each variant can have unique specifications
+- No additional API requests are required
+- All data is available immediately on page load
+
+---
+
+### Dynamic Rendering Logic
+
+On the frontend, JavaScript handles two types of user interaction:
+
+1. **Variant switching**  
+   When a user selects a different product variant, the corresponding
+   specification data is retrieved using the variant ID and rendered
+   instantly.
+
+2. **Unit toggling (cm / in)**  
+   Users can switch measurement units without reloading the page.
+   The displayed content updates based on the selected unit while
+   preserving the active variant.
+
+This behavior closely mirrors the interaction patterns used by
+industry-leading product pages.
+
+---
+
+### Result
+
+The final result is a specification section that:
+
+- Updates dynamically when variants change
+- Supports multiple measurement systems
+- Requires no third-party Shopify applications
+- Operates entirely within Shopify’s native capabilities
+
+This solution improves clarity on product detail pages while maintaining
+performance, scalability, and long-term maintainability.
+
+---
+
+### Why This Approach
+
+Compared to app-based solutions, this implementation:
+
+- Reduces dependency on external vendors
+- Avoids recurring subscription costs
+- Keeps all business logic transparent and version-controlled
+- Allows fine-grained customization of UI and behavior
+
+Most importantly, it provides a scalable foundation for complex products
+where specifications vary significantly across variants.
+
