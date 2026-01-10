@@ -46,11 +46,14 @@ Through this process, a clear implementation plan emerged:
 
 This step ensured that the solution was technically sound before moving into full implementation.
 
-## Shopify Variant Metafields Setup
+## Reference: Industry-leading Product Pages
+Before implementation, I analyzed how established brands structure their product detail pages to communicate specifications clearly and efficiently.
+![Original furniture company landing page](./images/furniture_company_original_landing_page.png)
+![Visual Comfort product page example](./images/visual_comfort_product_landing_page.png)
 
-To support variant-level specifications, the first step was defining custom metafields directly in Shopify Admin.
+These pages share a few common traits:
+- Clear hierarchy of information
+- Specifications presented without overwhelming the user
+- Minimal reliance on third-party UI plugins
 
-Instead of relying on product-level fields, metafields were created at the **variant scope**, allowing each option (e.g. size, finish) to carry its own specification data.
-
-![Build variant metafields in Shopify Admin](./images/build_metafields.png)
 
